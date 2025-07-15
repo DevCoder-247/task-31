@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 // Middlewares
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SECRET_KEY = 'secretkey@123';
 
 app.use(cors());
 app.use(bodyParser.json());
