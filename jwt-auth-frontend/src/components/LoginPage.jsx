@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:3000";
-
 function LoginPage() {
   const [form, setForm] = useState({ username: "", password: "" });
   const navigate = useNavigate();
@@ -12,7 +10,7 @@ function LoginPage() {
   };
 
   const register = async () => {
-    const res = await fetch(`${API}/register`, {
+    const res = await fetch(`${VITE_API_URL}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
@@ -22,7 +20,7 @@ function LoginPage() {
   };
 
   const login = async () => {
-    const res = await fetch(`${API}/login`, {
+    const res = await fetch(`${VITE_API_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
