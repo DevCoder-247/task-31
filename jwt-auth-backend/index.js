@@ -1,11 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const dotenv = require('dotenv')
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 
 // Middlewares
 const app = express();
 const PORT = process.env.PORT || 3000;
+const SECRET_KEY = process.env.SECRET_KEY
+
 
 app.use(cors());
 app.use(bodyParser.json());
